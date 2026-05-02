@@ -29,6 +29,8 @@ describe("recipe schemas", () => {
       title: "Spinach Scramble",
       servings: 2,
       totalTimeMinutes: 15,
+      caloriesPerServing: 320,
+      proteinGramsPerServing: 18,
       ingredients: ["eggs", "spinach", "salt"],
       steps: ["Crack eggs", "Saute spinach", "Combine and cook"],
       tips: ["Serve immediately"],

@@ -6,6 +6,8 @@ vi.mock("@/lib/ai/client", () => ({
     title: "Quick Garlic Pasta",
     servings: 2,
     totalTimeMinutes: 20,
+    caloriesPerServing: 520,
+    proteinGramsPerServing: 22,
     ingredients: ["pasta", "garlic", "olive oil", "salt"],
     steps: ["Boil pasta", "Saute garlic", "Toss together"]
   }))

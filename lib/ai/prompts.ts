@@ -37,6 +37,8 @@ Constraints:
   "title": "string",
   "servings": number,
   "totalTimeMinutes": number,
+  "caloriesPerServing": number,
+  "proteinGramsPerServing": number,
   "ingredients": ["string"],
   "steps": ["string"],
   "tips": ["string"], // optional

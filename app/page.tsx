@@ -160,6 +160,8 @@ export default function HomePage() {
           <div className="meta-row">
             <span className="pill">Servings: {recipe.servings}</span>
             <span className="pill">Total time: {recipe.totalTimeMinutes} min</span>
+            <span className="pill">Calories: {recipe.caloriesPerServing} kcal/serving</span>
+            <span className="pill">Protein: {recipe.proteinGramsPerServing} g/serving</span>
           </div>
 
           <h3>Ingredients</h3>
