@@ -19,7 +19,6 @@ describe("POST /api/recipe", () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        ingredients: ["pasta", "garlic"],
         cookTimeMinutes: 20,
         dietPreference: "non_veg",
         proteinTargetGrams: 35,
@@ -36,7 +35,6 @@ describe("POST /api/recipe", () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        ingredients: [],
         cookTimeMinutes: 0,
         dietPreference: "both"
       })

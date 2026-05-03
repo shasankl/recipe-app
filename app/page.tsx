@@ -30,11 +30,6 @@ export default function HomePage() {
     const proteinTarget = proteinTargetGrams.trim() === "" ? undefined : Number(proteinTargetGrams);
     const extraPreferences = additionalPreferences.trim();
 
-    if (!ingredients.length) {
-      setError("Please provide at least one ingredient.");
-      return;
-    }
-
     if (!Number.isInteger(cookTime) || cookTime <= 0) {
       setError("Cook time must be a positive whole number of minutes.");
       return;
@@ -85,17 +80,18 @@ export default function HomePage() {
         <p className="eyebrow">Smart meal planning</p>
         <h1>Smart Recipe Generator</h1>
         <p className="hero-text">
-          Add ingredients, set your time and preferences, and get a detailed meal plan in seconds.
+          Add desired ingredients if you have them, set your time and preferences, and get a
+          detailed meal plan in seconds.
         </p>
       </section>
 
       <section className="card form-card">
         <form onSubmit={onSubmit}>
-          <label htmlFor="ingredients">Ingredients (comma-separated)</label>
+          <label htmlFor="ingredients">Desired ingredients (optional, comma-separated)</label>
           <textarea
             id="ingredients"
             rows={4}
-            placeholder="chicken, garlic, lemon, olive oil, rice"
+            placeholder="e.g. chicken, garlic, lemon, olive oil, rice"
             value={ingredientsText}
             onChange={(event) => setIngredientsText(event.target.value)}
           />

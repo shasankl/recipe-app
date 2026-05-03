@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const recipeRequestSchema = z.object({
-  ingredients: z.array(z.string().min(1)).min(1),
+  ingredients: z.array(z.string().min(1)).default([]),
   cookTimeMinutes: z.number().int().positive().max(240),
   dietPreference: z.enum(["veg", "non_veg", "both"]),
   proteinTargetGrams: z.number().int().positive().max(300).optional(),

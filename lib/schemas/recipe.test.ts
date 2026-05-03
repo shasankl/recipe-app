@@ -4,7 +4,6 @@ import { recipeRequestSchema, recipeResponseSchema } from "@/lib/schemas/recipe"
 describe("recipe schemas", () => {
   it("accepts valid request payload", () => {
     const payload = {
-      ingredients: ["eggs", "spinach", "salt"],
       cookTimeMinutes: 15,
       dietPreference: "veg" as const,
       proteinTargetGrams: 25,
@@ -16,7 +15,6 @@ describe("recipe schemas", () => {
 
   it("rejects invalid request payload", () => {
     const payload = {
-      ingredients: [],
       cookTimeMinutes: 0,
       dietPreference: "both" as const
     };

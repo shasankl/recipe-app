@@ -1,6 +1,10 @@
 import type { RecipeRequest } from "@/lib/schemas/recipe";
 
 export function buildRecipePrompt(input: RecipeRequest): string {
+  const desiredIngredientsInstruction = input.ingredients.length
+    ? `Use these desired ingredients if possible:\n${input.ingredients.map((item) => `- ${item}`).join("\n")}`
+    : "No desired ingredients were provided. Choose ingredients that fit the user's other preferences.";
+
   const dietInstruction =
     input.dietPreference === "veg"
       ? "Vegetarian only. Do not include meat, poultry, or fish."
@@ -19,8 +23,8 @@ export function buildRecipePrompt(input: RecipeRequest): string {
 
   return `
 You are a helpful cooking assistant.
-Create one recipe using these ingredients:
-${input.ingredients.map((item) => `- ${item}`).join("\n")}
+Create one recipe.
+${desiredIngredientsInstruction}
 
 Constraints:
 - Maximum total cooking time: ${input.cookTimeMinutes} minutes
